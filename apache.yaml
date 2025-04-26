@@ -8,6 +8,7 @@ receivers:
     # Operator to parse the container logs
     - type: container
       id: container-parser
+      on_error: send_quiet # if it's not container logs ignore and proceed
     # Operator to parse the Apache logs
     # This operator uses a regex to parse the logs
     - id: apache-logs
